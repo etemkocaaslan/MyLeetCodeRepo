@@ -412,38 +412,37 @@
 #endregion
 
 #region 1759
-public class Solution
-{
-    public int CountHomogenous(string s)
-    {
-        long count = 0;
-        int mod = 1000000007;
-        int consecutive = 1;
 
-        for (int i = 1; i < s.Length; i++)
-        {
-            if (s[i] == s[i - 1])
-            {
-                consecutive++;
-            }
-            else
-            {
-                count += (long)consecutive * (consecutive + 1) / 2;
-                consecutive = 1;
-            }
-        }
+//public class Solution
+//{
+//    public int CountHomogenous(string s)
+//    {
+//        long count = 0;
+//        int mod = 1000000007;
+//        int consecutive = 1;
 
-        count += (long)consecutive * (consecutive + 1) / 2;
-        return (int)(count % mod);
-    }
-}
+//        for (int i = 1; i < s.Length; i++)
+//        {
+//            if (s[i] == s[i - 1])
+//            {
+//                consecutive++;
+//            }
+//            else
+//            {
+//                count += (long)consecutive * (consecutive + 1) / 2;
+//                consecutive = 1;
+//            }
+//        }
+
+//        count += (long)consecutive * (consecutive + 1) / 2;
+//        return (int)(count % mod);
+//    }
+//}
 
 #endregion
 public class Test
 {
     public static void Main(string[] args)
     {
-        Solution s = new Solution();
-        s.CountHomogenous("abbcccaa");
     }
 }
