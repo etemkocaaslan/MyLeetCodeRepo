@@ -416,40 +416,34 @@ public class Solution
 {
     public int CountHomogenous(string s)
     {
-        string substring = s[0].ToString();
-        string last = substring;
-        int n = s.Length * (s.Length + 1) / 2;
-        int count = 0;
-        //butun degerleri geziyorum
-        for (int i = 0; i < n; i++)
-        {
-            //o degerden kac tane oldugu bilgisini aliyorum
-            int length = s.Split(substring).Length - 1;
-            // eger bir ve birden fazla var mi diye bakiyorum 
-            if (length > 0)
-            {
-                //ne kadar oldugu bilgisini aldim
-                count += length;
-                //simdi ayni substringin kactane oldugunu almam gerekiyor
-                for (int j = 0; j < length; j++)
-                {
+        long count = 0;
+        int mod = 1000000007;
+        int consecutive = 1;
 
-                }
-                substring += substring;
+        for (int i = 1; i < s.Length; i++)
+        {
+            if (s[i] == s[i - 1])
+            {
+                consecutive++;
             }
             else
             {
-
+                count += (long)consecutive * (consecutive + 1) / 2;
+                consecutive = 1;
             }
         }
-        return count;
+
+        count += (long)consecutive * (consecutive + 1) / 2;
+        return (int)(count % mod);
     }
 }
+
 #endregion
 public class Test
 {
     public static void Main(string[] args)
     {
-        
+        Solution s = new Solution();
+        s.CountHomogenous("abbcccaa");
     }
 }
