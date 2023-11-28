@@ -438,11 +438,37 @@
 //        return (int)(count % mod);
 //    }
 //}
+#endregion
 
+#region
+public class Solution
+{
+    public static int[] TwoSum(int[] nums, int target)
+    {
+        Dictionary<int, int> map = new Dictionary<int, int>();
+
+        for(int i = 0; i< nums.Length; i++)
+        {
+            int pointer = target - nums[i];
+            if (map.ContainsKey(pointer))
+            {
+                return new int[] { map[pointer], i };
+            }
+            map[nums[i]] = i;
+        }
+        return new int[] { 0 };
+    }
+}
 #endregion
 public class Test
 {
     public static void Main(string[] args)
     {
+        int[] ints = { 2, 7, 11, 15 };
+        foreach(int i in Solution.TwoSum(ints, 9))
+        {
+            Console.WriteLine(i);
+        }
+        Console.ReadLine();
     }
 }
