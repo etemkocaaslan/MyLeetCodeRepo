@@ -523,8 +523,6 @@
 //            for (int i = 0; i < stopsToExplore; i++)
 //            {
 //                int currentExploringStop = stopsQueue.Dequeue();
-#endregion
-
 //                List<int> busesAtCurrentStop = stopToBuses.ContainsKey(currentExploringStop) ? stopToBuses[currentExploringStop] : new List<int>();
 
 //                foreach (int busAtCurrentStop in busesAtCurrentStop)
@@ -554,35 +552,40 @@
 //        return -1;
 //    }
 //}
-#region
+#endregion
+#region 1
+//public class Solution
+//{
+//    public static int[] TwoSum(int[] nums, int target)
+//    {
+//        Dictionary<int, int> map = new Dictionary<int, int>();
+
+//        for(int i = 0; i< nums.Length; i++)
+//        {
+//            int pointer = target - nums[i];
+//            if (map.ContainsKey(pointer))
+//            {
+//                return new int[] { map[pointer], i };
+//            }
+//            map[nums[i]] = i;
+//        }
+//        return new int[] { 0 };
+//    }
+//}
+#endregion
+
+#region 1611
 public class Solution
 {
-    public static int[] TwoSum(int[] nums, int target)
-    {
-        Dictionary<int, int> map = new Dictionary<int, int>();
-
-        for(int i = 0; i< nums.Length; i++)
-        {
-            int pointer = target - nums[i];
-            if (map.ContainsKey(pointer))
-            {
-                return new int[] { map[pointer], i };
-            }
-            map[nums[i]] = i;
-        }
-        return new int[] { 0 };
-    }
+    public int MinimumOneBitOperations(int n) => (n == 0) ? 0 : n ^ MinimumOneBitOperations(n >> 1);
 }
 #endregion
 public class Test
 {
     public static void Main(string[] args)
     {
-        int[] ints = { 2, 7, 11, 15 };
-        foreach(int i in Solution.TwoSum(ints, 9))
-        {
-            Console.WriteLine(i);
-        }
-        Console.ReadLine();
+        Solution solution = new Solution();
+        Console.WriteLine(solution.MinimumOneBitOperations(3));
+
     }
 }
