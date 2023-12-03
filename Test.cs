@@ -575,10 +575,54 @@
 #endregion
 
 #region 1611
-public class Solution
-{
-    public int MinimumOneBitOperations(int n) => (n == 0) ? 0 : n ^ MinimumOneBitOperations(n >> 1);
-}
+//public class Solution
+//{
+//    public int MinimumOneBitOperations(int n) => (n == 0) ? 0 : n ^ MinimumOneBitOperations(n >> 1);
+//}
+#endregion
+
+#region 1662
+//public class Solution
+//{
+//    public bool ArrayStringsAreEqual(string[] word1, string[] word2) => string.Concat(word1) == string.Concat(word2);
+//}
+//public class Solution1
+//{
+//    public bool ArrayStringsAreEqual(string[] word1, string[] word2)
+//    {
+//        return string.Concat(word1).Equals(string.Concat(word2));
+//    }
+//}
+#endregion
+
+#region 1160
+//public class Solution
+//{
+//    public int CountCharacters(string[] words, string chars)
+//    {
+//        int result = 0;
+//        string temp = chars;
+//        foreach (string word in words)
+//        {
+//            int count = 0;
+//            foreach (char c in word)
+//            {
+//                if (temp.Contains(c))
+//                {
+//                    count++;
+//                    temp = temp.Remove(temp.IndexOf(c), 1);
+//                }
+//                else
+//                    break;
+//            }
+//            if (count == word.Length)
+//                result += word.Length;
+//            temp = chars;
+//        }
+
+//        return result;
+//    }
+//}
 #endregion
 public class Test
 {
