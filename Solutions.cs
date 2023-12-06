@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace leetcode
@@ -682,6 +683,12 @@ namespace leetcode
     //public class Solution
     //{
     //public int NumberOfMatches(int n) => (n % 2 == 1) ? (((n - 1) / 2 + NumberOfMatches((n - 1) / 2 + 1))) : ((n > 2) ? n / 2 + NumberOfMatches(n / 2) : 1);
+    //}
+    #endregion
+    #region 1716
+    //public class Solution
+    //{
+    //    public int TotalMoney(int n) => Enumerable.Range(1, n).Select((val, index) => (val % 7 == 0 ? 7 : val % 7) + index/7).Sum();
     //}
     #endregion
 }
