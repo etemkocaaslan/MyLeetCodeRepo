@@ -691,4 +691,10 @@ namespace leetcode
     //    public int TotalMoney(int n) => Enumerable.Range(1, n).Select((val, index) => (val % 7 == 0 ? 7 : val % 7) + index/7).Sum();
     //}
     #endregion
+    #region 1903
+    //public class Solution
+    //{
+    //    public string LargestOddNumber(string num) => num[..(1 + num.LastIndexOfAny(new[] { '1', '3', '5', '7', '9' }))];
+    //}
+    #endregion
 }
