@@ -559,6 +559,7 @@ namespace leetcode
     //    }
     //}
     #endregion
+
     #region 1
     //public class Solution
     //{
@@ -647,6 +648,7 @@ namespace leetcode
     //    }
     //}
     #endregion
+
     #region 1688
     //public class Solution
     //{
@@ -679,18 +681,21 @@ namespace leetcode
     //    }
     //}
     #endregion
+
     #region
     //public class Solution
     //{
     //public int NumberOfMatches(int n) => (n % 2 == 1) ? (((n - 1) / 2 + NumberOfMatches((n - 1) / 2 + 1))) : ((n > 2) ? n / 2 + NumberOfMatches(n / 2) : 1);
     //}
     #endregion
+
     #region 1716
     //public class Solution
     //{
     //    public int TotalMoney(int n) => Enumerable.Range(1, n).Select((val, index) => (val % 7 == 0 ? 7 : val % 7) + index/7).Sum();
     //}
     #endregion
+
     #region 1903
     //public class Solution
     //{
@@ -727,6 +732,68 @@ namespace leetcode
     //        if (root.right != null)
     //            result += "(" + Tree2str(root.right) + ")";
     //        return result;
+    //    }
+    //}
+    #endregion
+
+    #region 94
+    ////Definition for a binary tree node.
+    //public class TreeNode
+    //{
+    //    public int val;
+    //    public TreeNode left;
+    //    public TreeNode right;
+    //    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+    //    {
+    //        this.val = val;
+    //        this.left = left;
+    //        this.right = right;
+    //    }
+    //}
+
+    //public class Solution
+    //{
+    //    public IList<int> InorderTraversal(TreeNode root)
+    //    {
+    //        List<int> result = new();
+    //        Stack<TreeNode> stack = new();
+
+    //        var currentnode = root;
+    //        while (currentnode != null || stack.Count != 0)
+    //        {
+    //            if (currentnode != null)
+    //            {
+    //                stack.Push(currentnode);
+    //                currentnode = currentnode.left;
+    //            }
+    //            else
+    //            {
+    //                currentnode = stack.Pop();
+    //                result.Add(currentnode.val);
+    //                currentnode = currentnode.right;
+    //            }
+    //        }
+
+    //        return result;
+    //    }
+    //}
+    #endregion
+
+    #region 867
+    //public class Solution
+    //{
+    //    public int[][] Transpose(int[][] matrix)
+    //    {
+    //        int[][] results = new int[matrix[0].Length][];
+
+    //        for (int i = 0; i < matrix[0].Length; i++)
+    //            results[i] = new int[matrix.Length];
+
+    //        for (int row = 0; row < matrix.Length; row++)
+    //            for (int column = 0; column < matrix[0].Length; column++)
+    //                results[column][row] = matrix[row][column];
+
+    //        return results;
     //    }
     //}
     #endregion
