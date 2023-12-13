@@ -799,31 +799,65 @@ namespace leetcode
     #endregion
 
     #region 1464
- public class Solution
- {
-     public int FindSpecialInteger(int[] arr)
-     {
-         int count = arr.Length / 4;
-         int current = arr[0];
-         int currentCount = 1;
+    //public class Solution
+    //{
+    //    public int FindSpecialInteger(int[] arr)
+    //    {
+    //        int count = arr.Length / 4;
+    //        int current = arr[0];
+    //        int currentCount = 1;
 
-         for (int i = 1; i < arr.Length; i++)
-         {
-             if (arr[i] != current)
-             {
-                 current = arr[i];
-                 currentCount = 1;
-             }
-             else
-             {
-                 currentCount++;
-                 if (currentCount > count)
-                     return current;
-             }
-         }
-         return current;
-     }
+    //        for (int i = 1; i < arr.Length; i++)
+    //        {
+    //            if (arr[i] != current)
+    //            {
+    //                current = arr[i];
+    //                currentCount = 1;
+    //            }
+    //            else
+    //            {
+    //                currentCount++;
+    //                if (currentCount > count)
+    //                    return current;
+    //            }
+    //        }
+    //        return current;
+    //    }
 
- }
+    //}
+    #endregion
+
+    #region 1582
+    //public class Solution
+    //{
+    //    public int NumSpecial(int[][] mat)
+    //    {
+    //        int[] rSum = new int[mat.Length];
+    //        int[] cSum = new int[mat[0].Length];
+    //        for (int i = 0; i < mat.Length; i++)
+    //        {
+    //            for (int j = 0; j < mat[0].Length; j++)
+    //            {
+    //                rSum[i] += mat[i][j];
+    //                cSum[j] += mat[i][j];
+    //            }
+    //        }
+
+          
+
+    //        int res = 0;
+    //        for (int i = 0; i < mat.Length; i++)
+    //        {
+    //            if (rSum[i] == 1)
+    //                for (int j = 0; j < mat[0].Length; j++)
+    //                {
+    //                    if (mat[i][j] == 1 && cSum[j] == 1)
+    //                        res++;
+    //                }
+    //        }
+
+    //        return res;
+    //    }
+    //}
     #endregion
 }
