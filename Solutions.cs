@@ -797,4 +797,33 @@ namespace leetcode
     //    }
     //}
     #endregion
+
+    #region 1464
+ public class Solution
+ {
+     public int FindSpecialInteger(int[] arr)
+     {
+         int count = arr.Length / 4;
+         int current = arr[0];
+         int currentCount = 1;
+
+         for (int i = 1; i < arr.Length; i++)
+         {
+             if (arr[i] != current)
+             {
+                 current = arr[i];
+                 currentCount = 1;
+             }
+             else
+             {
+                 currentCount++;
+                 if (currentCount > count)
+                     return current;
+             }
+         }
+         return current;
+     }
+
+ }
+    #endregion
 }
