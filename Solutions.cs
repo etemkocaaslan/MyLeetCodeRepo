@@ -904,4 +904,28 @@ namespace leetcode
     //    }
     //}
     #endregion
+
+    #region 1436
+    //public class Solution
+    //{
+    //    public string DestCity(IList<IList<string>> paths)
+    //    {
+    //        string result = "";
+    //        HashSet<string> pathset = new HashSet<string>();
+    //        foreach (IList<string> path in paths)
+    //            pathset.Add(path[0]);
+
+    //        foreach (IList<string> path in paths)
+    //        {
+    //            if (!pathset.Contains(path[1]))
+    //            {
+    //                result = path[1];
+    //                break;
+    //            }
+    //        }
+
+    //        return result;
+    //    }
+    //}
+    #endregion
 }
