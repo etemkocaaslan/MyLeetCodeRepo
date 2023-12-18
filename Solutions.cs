@@ -1011,4 +1011,16 @@ namespace leetcode
     //* string param_2 = obj.HighestRated(cuisine);
     //*/
     #endregion
+
+    #region 1913
+    //public class Solution
+    //{
+    //    public int MaxProductDifference(int[] nums)
+    //    {
+    //        var a = nums.ToList<int>();
+    //        a.Sort();
+    //        return (a[^2] * a[^1]) - (a[0] * a[1]);
+    //    }
+    //}
+    #endregion
 }
