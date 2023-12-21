@@ -1,77 +1,77 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
 namespace leetcode
 {
-    #region 1480
-    //public class Solution
-    //{
-    //    public int[] RunningSum(int[] nums)
-    //    {
-    //        int[] runningSum = new int[nums.Length];
+    #region 
+    public class Solution1480
+    {
+        public int[] RunningSum(int[] nums)
+        {
+            int[] runningSum = new int[nums.Length];
 
-    //        for (int i = nums.Length; i > 0; i--)
-    //        {
-    //            for (int j = 0; j < i; j++)
-    //            {
-    //                runningSum[i - 1] += nums[j];
-    //            }
-    //        }
-    //        return runningSum;
-    //    }
-    //}
+            for (int i = nums.Length; i > 0; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    runningSum[i - 1] += nums[j];
+                }
+            }
+            return runningSum;
+        }
+    }
     #endregion
 
-    #region 205
-    //public class Solution
-    //{
-    //    public int PivotIndex(int[] nums)
-    //    {
-    //        int totalSum = 0;
-    //        for (int i = 0; i < nums.Length; i++) totalSum += nums[i];
-
-    //        int leftSum = 0;
-    //        for (int i = 0; i < nums.Length; i++)
-    //        {
-    //            if (totalSum - nums[i] == leftSum*2) return i;
-    //            leftSum += nums[i];
-    //        }
-    //        return -1;
-    //    }
-    //}
+    #region 
+    public class Solution205
+    {
+        public int PivotIndex(int[] nums)
+        {
+            int totalSum = 0;
+            for (int i = 0; i < nums.Length; i++) totalSum += nums[i];
+            int leftSum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (totalSum - nums[i] == leftSum * 2) return i;
+                leftSum += nums[i];
+            }
+            return -1;
+        }
+    }
     #endregion
 
     #region
-    //public class Solution
-    //{
-    //    public int FindKthPositive(int[] arr, int k)
-    //    {
-    //        int[] missingint = new int[1000];
-    //
-    //        if (arr[0] != 1)
-    //            missingint[0] = 1;
-    //
-    //        for (int i = 0; i < arr.Length;)
-    //        {
-    //            if (arr[i] + 1 != arr[i + 1])
-    //            {
-    //                missingint[i] = arr[i] + 1;
-    //                for (int j = 0; j < arr[i + 1] - arr[i]; j++)
-    //                {
-    //                    missingint[i + 1 + j] += missingint[i + j];
-    //                }
-    //            }
-    //        }
-    //
-    //        return missingint[k];
-    //    }
-    //}
+    public class Solution
+    {
+        public int FindKthPositive(int[] arr, int k)
+        {
+            int[] missingint = new int[1000];
+
+            if (arr[0] != 1)
+                missingint[0] = 1;
+
+            for (int i = 0; i < arr.Length;)
+            {
+                if (arr[i] + 1 != arr[i + 1])
+                {
+                    missingint[i] = arr[i] + 1;
+                    for (int j = 0; j < arr[i + 1] - arr[i]; j++)
+                    {
+                        missingint[i + 1 + j] += missingint[i + j];
+                    }
+                }
+            }
+
+            return missingint[k];
+        }
+    }
     #endregion
 
-    #region 1768
-    //public class Solution
+    #region 
+    //public class Solution1768
     //{
     //    public string MergeAlternately(string word1, string word2)
     //    {
@@ -86,340 +86,306 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1672
-    //public class Solution
-    //{
-    //    public int MaximumWealth(int[][] accounts)
-    //    {
-    //        int RichestCustomerWealth = 0;
-    //        for (int i = 0; i < accounts.Length; i++)
-    //        {
-    //            int Wealth = 0;
-    //            Array.ForEach(accounts[i], value => Wealth += value);
+    #region 
+    public class Solution1672
+    {
+        public int MaximumWealth(int[][] accounts)
+        {
+            int RichestCustomerWealth = 0;
+            for (int i = 0; i < accounts.Length; i++)
+            {
+                int Wealth = 0;
+                Array.ForEach(accounts[i], value => Wealth += value);
 
-    //            if (Wealth > RichestCustomerWealth)
-    //                RichestCustomerWealth = Wealth;
-    //        }
-    //        return RichestCustomerWealth;
-    //    }
-    //}
+                if (Wealth > RichestCustomerWealth)
+                    RichestCustomerWealth = Wealth;
+            }
+            return RichestCustomerWealth;
+        }
+    }
     #endregion
 
-    #region 412
-    //public class Solution
-    //{
-    //    //Given an integer n, return a string array answer(1-indexed) where:
+    #region 
+    public class Solution412
+    {
+        //Given an integer n, return a string array answer(1-indexed) where:
 
-    //    //answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
-    //    //answer[i] == "Fizz" if i is divisible by 3.
-    //    //answer[i] == "Buzz" if i is divisible by 5.
-    //    //answer[i] == i(as a string) if none of the above conditions are true.
+        //answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+        //answer[i] == "Fizz" if i is divisible by 3.
+        //answer[i] == "Buzz" if i is divisible by 5.
+        //answer[i] == i(as a string) if none of the above conditions are true.
 
-    //    public IList<string> FizzBuzz(int n)
-    //    {
-    //        var list = new List<string>(n);
-    //        for (int i = 1; i <= n; i++)
-    //        {
-    //            string item = (i % 3 == 0, i % 5 == 0) switch
-    //            {
-    //                (true, true) => "FizzBuzz",
-    //                (true, false) => "Fizz",
-    //                (false, true) => "Buzz",
-    //                (false, false) => i.ToString(),
-    //            };
+        public IList<string> FizzBuzz(int n)
+        {
+            var list = new List<string>(n);
+            for (int i = 1; i <= n; i++)
+            {
+                string item = (i % 3 == 0, i % 5 == 0) switch
+                {
+                    (true, true) => "FizzBuzz",
+                    (true, false) => "Fizz",
+                    (false, true) => "Buzz",
+                    (false, false) => i.ToString(),
+                };
 
-    //            list.Add(item);
-    //        }
+                list.Add(item);
+            }
 
-    //        return list;
-    //    }
+            return list;
+        }
 
-    //}
+    }
     #endregion
 
-    #region 876
-    //public class Solution
-    //{
-    //    //Definition for singly-linked list.
-    //    public class ListNode
-    //    {
-    //        public int val;
-    //        public ListNode next;
-    //        public ListNode(int val = 0, ListNode next = null)
-    //        {
-    //            this.val = val;
-    //            this.next = next;
-    //        }
-    //    }
+    #region 
+    public class Solution876
+    {
+        //Definition for singly-linked list.
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
+        public ListNode? MiddleNode(ListNode head)
+        {
+            ListNode currentNode1 = head;
+            int count1 = 0;
+            while (currentNode1 != null)
+            {
+                currentNode1 = currentNode1.next;
+                count1++;
+            }
+            ListNode currentNode2 = head;
+            int count2 = 0;
+            while (true)
+            {
+                if (count2 == count1 / 2)
+                    return currentNode2;
 
-    //    public ListNode? MiddleNode(ListNode head)
-    //    {
-    //        ListNode currentNode1 = head;
-    //        int count1 = 0;
-    //        while (currentNode1 != null)
-    //        {
-    //            currentNode1 = currentNode1.next;
-    //            count1++;
-    //        }
-
-    //        ListNode currentNode2 = head;
-    //        int count2 = 0;
-    //        while (true)
-    //        {
-    //            if (count2 == count1 / 2)
-    //                return currentNode2;
-
-    //            currentNode2 = currentNode2.next;
-    //            count2++;
-    //        }
-    //    }
-    //}
+                currentNode2 = currentNode2.next;
+                count2++;
+            }
+        }
+    }
     #endregion
 
-    #region 383
-    //public class Solution
-    //{
-    //    public bool CanConstruct(string ransomNote, string magazine)
-    //    {
-    //        List<char> list = new List<char>(magazine);
+    #region 
+    public class Solution383
+    {
+        public bool CanConstruct(string ransomNote, string magazine)
+        {
+            List<char> list = new List<char>(magazine);
 
-    //        for (int i = 0; i < ransomNote.Length; i++)
-    //        {
-    //            if (!list.Remove(ransomNote[i]))
-    //                return false;
-    //        }
-    //        return true;
-    //    }
-    //}
+            for (int i = 0; i < ransomNote.Length; i++)
+            {
+                if (!list.Remove(ransomNote[i]))
+                    return false;
+            }
+            return true;
+        }
+    }
     #endregion
 
-    #region 1
-    //public class Solution
-    //{
-    //    public int[] TwoSum(int[] nums, int target)
-    //    {
-    //        for (int i = 0; i < nums.Length; i++)
-    //        {
-    //            for (int j = i + 1; j < nums.Length; j++)
-    //            {
-    //                if (nums[i] + nums[j] == target)
-    //                    return new int[] { i, j };
-    //            }
-    //        }
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
-    //        throw new ArgumentException("No solution found");
-    //    }
-    //}
-    #endregion
+    public class Solution257
+    {
+        //.. Different Approachment
+        
+        //public IList<string> BinaryTreePaths(TreeNode root)
+        //{
+        //    List<string> paths = new List<string>();
+        //    string s = "";
 
-    #region Binary Tree Paths
-    //using System.Linq;
-    //using System.Reflection.Metadata;
+        //    FindPath(root, s);
 
-    //public class TreeNode
-    //{
-    //    public int val;
-    //    public TreeNode left;
-    //    public TreeNode right;
-    //    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-    //    {
-    //        this.val = val;
-    //        this.left = left;
-    //        this.right = right;
-    //    }
-    //}
+        //    void FindPath(TreeNode root, string s1)
+        //    {
+        //        if (root != null)
+        //        {
+        //            if (root.left == null && root.right == null)
+        //            {
+        //                s1 = s1 + root.val;
+        //                paths.Add(s1);
+        //            }
+        //            else
+        //            {
+        //                s1 = s1 + root.val + "->";
+        //                FindPath(root.left, s1);
+        //                FindPath(root.right, s1);
+        //            }
+        //        }
+        //    }
 
-    //public class Solution
-    //{
-    //    //public IList<string> BinaryTreePaths(TreeNode root)
-    //    //{
-    //    //    List<string> paths = new List<string>();
-    //    //    string s = "";
+        //    return paths;
+        //}
 
-    //    //    FindPath(root, s);
+        public IList<string> BinaryTreePaths(TreeNode root)
+        {
+            IList<string> leftPath = new List<string>();
+            IList<string> rightPath = new List<string>();
 
-    //    //    void FindPath(TreeNode root, string s1)
-    //    //    {
-    //    //        if (root != null)
-    //    //        {
-    //    //            if (root.left == null && root.right == null)
-    //    //            {
-    //    //                s1 = s1 + root.val;
-    //    //                paths.Add(s1);
-    //    //            }
-    //    //            else
-    //    //            {
-    //    //                s1 = s1 + root.val + "->";
-    //    //                FindPath(root.left, s1);
-    //    //                FindPath(root.right, s1);
-    //    //            }
-    //    //        }
-    //    //    }
+            if (root.left != null)
+            {
+                leftPath = BinaryTreePaths(root.left);
+                for (int i = 0; i < leftPath.Count; i++)
+                    leftPath[i] = root.val + "->" + leftPath[i];
+            }
+            else if (root.right == null)
+            {
+                leftPath.Add(root.val.ToString());
+                return leftPath;
+            }
 
-    //    //    return paths;
-    //    //}
+            if (root.right != null)
+            {
+                rightPath = BinaryTreePaths(root.right);
+                for (int i = 0; i < rightPath.Count; i++)
+                    rightPath[i] = root.val + "->" + rightPath[i];
+            }
+            else if (root.left == null)
+            {
+                rightPath.Add(root.val.ToString());
+                return rightPath;
+            }
 
-    //    public IList<string> BinaryTreePaths(TreeNode root)
-    //    {
-    //        IList<string> leftPath = new List<string>();
-    //        IList<string> rightPath = new List<string>();
+            return leftPath.Concat(rightPath).ToList();
+        }
+    }
 
-    //        if (root.left != null)
-    //        {
-    //            leftPath = BinaryTreePaths(root.left);
-    //            for (int i = 0; i < leftPath.Count; i++)
-    //                leftPath[i] = root.val + "->" + leftPath[i];
-    //        }
-    //        else if (root.right == null)
-    //        {
-    //            leftPath.Add(root.val.ToString());
-    //            return leftPath;
-    //        }
+    
+    public class Solution228
+    {
+        public IList<string> SummaryRanges(int[] nums)
+        {
+            if (nums == null || nums.Length == 0)
+                return new List<string>();
 
-    //        if (root.right != null)
-    //        {
-    //            rightPath = BinaryTreePaths(root.right);
-    //            for (int i = 0; i < rightPath.Count; i++)
-    //                rightPath[i] = root.val + "->" + rightPath[i];
-    //        }
-    //        else if (root.left == null)
-    //        {
-    //            rightPath.Add(root.val.ToString());
-    //            return rightPath;
-    //        }
+            if (nums.Length == 1)
+                return new List<string>() { nums[0].ToString() };
 
-    //        return leftPath.Concat(rightPath).ToList();
-    //    }
-    //}
-    #endregion
+            var result = new List<string>();
 
-    #region 228
-    //public class Solution
-    //{
-    //    public IList<string> SummaryRanges(int[] nums)
-    //    {
-    //        if (nums == null || nums.Length == 0)
-    //            return new List<string>();
+            int start = nums[0];
+            int previous = start;
+            for (int i = 1; i < nums.Length; ++i)
+            {
+                int current = nums[i];
+                if (current != previous + 1)
+                {
+                    if (start == previous)
+                        result.Add(previous.ToString());
+                    else
+                        result.Add(start + "->" + previous);
 
-    //        if (nums.Length == 1)
-    //            return new List<string>() { nums[0].ToString() };
+                    if (nums.Length - 1 == i)
+                        result.Add(current.ToString());
 
-    //        var result = new List<string>();
+                    start = current;
+                }
+                else if (nums.Length - 1 == i)
+                    result.Add(start + "->" + current.ToString());
 
-    //        int start = nums[0];
-    //        int previous = start;
-    //        for (int i = 1; i < nums.Length; ++i)
-    //        {
-    //            int current = nums[i];
-    //            if (current != previous + 1)
-    //            {
-    //                if (start == previous)
-    //                    result.Add(previous.ToString());
-    //                else
-    //                    result.Add(start + "->" + previous);
+                previous = current;
+            }
 
-    //                if (nums.Length - 1 == i)
-    //                    result.Add(current.ToString());
+            return result;
+        }
+    }
+    
 
-    //                start = current;
-    //            }
-    //            else if (nums.Length - 1 == i)
-    //                result.Add(start + "->" + current.ToString());
+    
+    public class Solution2849
+    {
+        public bool IsReachableAtTime(int sx, int sy, int fx, int fy, int t)
+        {
+            if (sx == fx && sy == fy)
+                return t > 1 || t == 0;
 
-    //            previous = current;
-    //        }
+            return t >= Math.Max(Math.Abs(fx - sx), Math.Abs(fy - sy));
+        }
+    }
+    
 
-    //        return result;
-    //    }
-    //}
-    #endregion
+    
+    public class Solution2352
+    {
+        public int EqualPairs(int[][] grid)
+        {
+            int count = 0;
+            int[] cols = new int[grid.Length];
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[i].Length; j++)
+                    cols[j] = grid[j][i];
+                for (int k = 0; k < cols.Length; k++)
+                    if (cols.SequenceEqual(grid[k]))
+                        count++;
+            }
+            return count;
+        }
+    }
+    
+    
+    public class Solution1356
+    {
+        public int[] SortByBits(int[] arr)
+        {
+            Array.Sort(arr);
+            return arr.OrderBy(i => Convert.ToString(i, 2).Count(digit => digit == '1')).ToArray();
+        }
+    }
+    
 
-    #region 2849
-    //public class Solution
-    //{
-    //    public bool IsReachableAtTime(int sx, int sy, int fx, int fy, int t)
-    //    {
-    //        if (sx == fx && sy == fy)
-    //            return t > 1 || t == 0;
+    
+    public class Solution9
+    {
+        public bool IsPalindrome(int x) => x.ToString().Equals(new string(x.ToString().Reverse().ToArray()));
 
-    //        return t >= Math.Max(Math.Abs(fx - sx), Math.Abs(fy - sy));
-    //    }
-    //}
-    #endregion
+    }
 
-    #region 2352
-    //using System.Collections.Generic;
-    //public class Solution
-    //{
-    //    public int EqualPairs(int[][] grid)
-    //    {
-    //        int count = 0;
-    //        int[] cols = new int[grid.Length];
-    //        for (int i = 0; i < grid.Length; i++)
-    //        {
-    //            for (int j = 0; j < grid[i].Length; j++)
-    //                cols[j] = grid[j][i];
-    //            for (int k = 0; k < cols.Length; k++)
-    //                if (cols.SequenceEqual(grid[k]))
-    //                    count++;
-    //        }
-    //        return count;
-    //    }
-    //}
-    //#endregion
-    #endregion
+    public class Solution141
+    {
+        public class ListNode(int x)
+        {
+            public int val = x;
+            public ListNode? next = null;
+        }
 
-    #region 1356
-    //public class Solution
-    //{
-    //    public int[] SortByBits(int[] arr)
-    //    {
-    //        Array.Sort(arr);
-    //        return arr.OrderBy(i => Convert.ToString(i, 2).Count(digit => digit == '1')).ToArray();
-    //    }
-    //}
-    #endregion
+        public bool HasCycle(ListNode head)
+        {
+            HashSet<ListNode> visited = new();
+            ListNode? current_node = head;
+            while (current_node != null)
+            {
+                if (visited.Contains(current_node))
+                    return true;
+                visited.Add(current_node);
+                current_node = current_node.next;
+            }
+            return false;
+        }
+    }
+    
 
-    #region 9
-    //public class Solution
-    //{
-    //    public bool IsPalindrome(int x) => x.ToString().Equals(new string(x.ToString().Reverse().ToArray()));
-
-    //}
-    #endregion
-
-    #region 141
-    //public class ListNode
-    //{
-    //    public int val;
-    //    public ListNode next;
-    //    public ListNode(int x)
-    //    {
-    //        val = x;
-    //        next = null;
-    //    }
-    //}
-
-    //public class Solution
-    //{
-    //    public bool HasCycle(ListNode head)
-    //    {
-    //        HashSet<ListNode> visited = new();
-    //        ListNode current_node = head;
-    //        while (current_node != null)
-    //        {
-    //            if (visited.Contains(current_node))
-    //                return true;
-    //            visited.Add(current_node);
-    //            current_node = current_node.next;
-    //        }
-    //        return false;
-    //    }
-    //}
-    #endregion
-
-    #region 1759
-    //public class Solution
+    #region 
+    //public class Solution1759
     //{
     //    public int CountHomogenous(string s)
     //    {
@@ -446,8 +412,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1685
-    //public class Solution
+    #region 
+    //public class Solution1685
     //{
     //    public static int[] GetSumAbsoluteDifferences(int[] nums)
     //    {
@@ -485,16 +451,16 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1727
-    //public class Solution
+    #region 
+    //public class Solution1727
     //{
     //    public int HammingWeight(uint n) => Convert.ToString(n, 2).Count((x) => x == '1');
 
     //}
     #endregion
 
-    #region 815. Bus Routes
-    //public class Solution
+    #region . Bus Routes
+    //public class Solution815
     //{
     //    public int NumBusesToDestination(int[][] routes, int source, int target)
     //    {
@@ -561,8 +527,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1
-    //public class Solution
+    #region 
+    //public class Solution1
     //{
     //    public static int[] TwoSum(int[] nums, int target)
     //    {
@@ -582,15 +548,15 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1611
-    //public class Solution
+    #region 
+    //public class Solution1611
     //{
     //    public int MinimumOneBitOperations(int n) => (n == 0) ? 0 : n ^ MinimumOneBitOperations(n >> 1);
     //}
     #endregion
 
-    #region 1662
-    //public class Solution
+    #region 
+    //public class Solution1662
     //{
     //    public bool ArrayStringsAreEqual(string[] word1, string[] word2) => string.Concat(word1) == string.Concat(word2);
     //}
@@ -603,8 +569,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1160
-    //public class Solution
+    #region 
+    //public class Solution1160
     //{
     //    public int CountCharacters(string[] words, string chars)
     //    {
@@ -633,8 +599,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1266
-    //public class Solution
+    #region 
+    //public class Solution1266
     //{
     //    public int MinTimeToVisitAllPoints(int[][] points)
     //    {
@@ -650,8 +616,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1688
-    //public class Solution
+    #region 
+    //public class Solution1688
     //{
     //    public string LargestGoodInteger(string num)
     //    {
@@ -690,21 +656,21 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1716
-    //public class Solution
+    #region 
+    //public class Solution1716
     //{
     //    public int TotalMoney(int n) => Enumerable.Range(1, n).Select((val, index) => (val % 7 == 0 ? 7 : val % 7) + index/7).Sum();
     //}
     #endregion
 
-    #region 1903
-    //public class Solution
+    #region 
+    //public class Solution1903
     //{
     //    public string LargestOddNumber(string num) => num[..(1 + num.LastIndexOfAny(new[] { '1', '3', '5', '7', '9' }))];
     //}
     #endregion
 
-    #region 606
+    #region 
     //Definition for a binary tree node.
     //public class TreeNode
     //{
@@ -718,7 +684,7 @@ namespace leetcode
     //        this.right = right;
     //    }
     //}
-    //public class Solution
+    //public class Solution606
     //{
     //    public string Tree2str(TreeNode root)
     //    {
@@ -737,7 +703,7 @@ namespace leetcode
     //}
     #endregion
 
-    #region 94
+    #region 
     ////Definition for a binary tree node.
     //public class TreeNode
     //{
@@ -752,7 +718,7 @@ namespace leetcode
     //    }
     //}
 
-    //public class Solution
+    //public class Solution94
     //{
     //    public IList<int> InorderTraversal(TreeNode root)
     //    {
@@ -780,8 +746,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 867
-    //public class Solution
+    #region 
+    //public class Solution867
     //{
     //    public int[][] Transpose(int[][] matrix)
     //    {
@@ -799,8 +765,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1464
-    //public class Solution
+    #region 
+    //public class Solution1464
     //{
     //    public int FindSpecialInteger(int[] arr)
     //    {
@@ -828,8 +794,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1582
-    //public class Solution
+    #region 
+    //public class Solution1582
     //{
     //    public int NumSpecial(int[][] mat)
     //    {
@@ -862,8 +828,8 @@ namespace leetcode
     //}
     #endregion
 
-    #region 2482
-    //public class Solution
+    #region 
+    //public class Solution2482
     //{
     //    public int[][] OnesMinusZeros(int[][] grid)
     //    {
@@ -905,122 +871,5 @@ namespace leetcode
     //}
     #endregion
 
-    #region 1436
-    //public class Solution
-    //{
-    //    public string DestCity(IList<IList<string>> paths)
-    //    {
-    //        string result = "";
-    //        HashSet<string> pathset = new HashSet<string>();
-    //        foreach (IList<string> path in paths)
-    //            pathset.Add(path[0]);
 
-    //        foreach (IList<string> path in paths)
-    //        {
-    //            if (!pathset.Contains(path[1]))
-    //            {
-    //                result = path[1];
-    //                break;
-    //            }
-    //        }
-
-    //        return result;
-    //    }
-    //}
-    #endregion
-
-    #region 242
-    //public class Solution
-    //{
-    //    public bool IsAnagram(string s, string t)
-    //    {
-    //        char[] a = s.ToArray();
-    //        char[] b = t.ToArray();
-
-    //        Array.Sort(a);
-    //        Array.Sort(b);
-
-    //        return a.SequenceEqual(b);
-    //    }
-    //}
-    #endregion
-
-    #region 2353
-    //public class FoodRatings
-    //{
-    //    private class FoodItem
-    //    {
-    //        public string Cuisine { get; set; }
-    //        public int Rating { get; set; }
-
-    //        public FoodItem(string cuisine, int rating)
-    //        {
-    //            Cuisine = cuisine;
-    //            Rating = rating;
-    //        }
-    //    }
-
-    //    private Dictionary<string, FoodItem> foodItems;
-    //    private Dictionary<string, SortedDictionary<int, SortedSet<string>>> cuisineRatings;
-
-    //    public FoodRatings(string[] foods, string[] cuisines, int[] ratings)
-    //    {
-    //        foodItems = new Dictionary<string, FoodItem>();
-    //        cuisineRatings = new Dictionary<string, SortedDictionary<int, SortedSet<string>>>();
-
-    //        for (int i = 0; i < foods.Length; i++)
-    //        {
-    //            string food = foods[i];
-    //            string cuisine = cuisines[i];
-    //            int rating = ratings[i];
-
-    //            foodItems[food] = new FoodItem(cuisine, rating);
-
-    //            if (!cuisineRatings.ContainsKey(cuisine))
-    //                cuisineRatings[cuisine] = new SortedDictionary<int, SortedSet<string>>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
-
-    //            if (!cuisineRatings[cuisine].ContainsKey(rating))
-    //                cuisineRatings[cuisine][rating] = new SortedSet<string>();
-
-    //            cuisineRatings[cuisine][rating].Add(food);
-    //        }
-    //    }
-
-    //    public void ChangeRating(string food, int newRating)
-    //    {
-    //        var foodItem = foodItems[food];
-    //        cuisineRatings[foodItem.Cuisine][foodItem.Rating].Remove(food);
-
-    //        if (!cuisineRatings[foodItem.Cuisine][foodItem.Rating].Any())
-    //            cuisineRatings[foodItem.Cuisine].Remove(foodItem.Rating);
-
-    //        foodItem.Rating = newRating;
-
-    //        if (!cuisineRatings[foodItem.Cuisine].ContainsKey(newRating))
-    //            cuisineRatings[foodItem.Cuisine][newRating] = new SortedSet<string>();
-
-    //        cuisineRatings[foodItem.Cuisine][newRating].Add(food);
-    //    }
-
-    //    public string HighestRated(string cuisine) => cuisineRatings[cuisine].First().Value.Min;
-    //}
-    /**
-    //* Your FoodRatings object will be instantiated and called as such:
-    //* FoodRatings obj = new FoodRatings(foods, cuisines, ratings);
-    //* obj.ChangeRating(food,newRating);
-    //* string param_2 = obj.HighestRated(cuisine);
-    //*/
-    #endregion
-
-    #region 1913
-    //public class Solution
-    //{
-    //    public int MaxProductDifference(int[] nums)
-    //    {
-    //        var a = nums.ToList<int>();
-    //        a.Sort();
-    //        return (a[^2] * a[^1]) - (a[0] * a[1]);
-    //    }
-    //}
-    #endregion
 }
