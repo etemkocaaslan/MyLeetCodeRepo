@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace leetcode.Solutions
+﻿namespace leetcode.Solutions
 {
     public class Solution1335
     {
