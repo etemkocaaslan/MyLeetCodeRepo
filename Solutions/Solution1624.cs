@@ -30,49 +30,28 @@
     //    }
     //}
 
-    //public class Solution1624
-    //{
-    //    public int MaxLengthBetweenEqualCharacters(string s)
-    //    {
-    //        if (s.Length == 1)
-    //            return 0;
-
-    //        Dictionary<char, int> map = new Dictionary<char, int>();
-
-    //        int count = 0;
-    //        for (int position = 0; position < s.Length; ++position)
-    //        {
-    //            if (map.ContainsKey(s[position]))
-    //            {
-    //                if (position - map[s[position]] > count)
-    //                    count = position - map[s[position]] - 1;
-    //            }
-    //            else
-    //                map.Add(s[position], position);
-    //        }
-
-    //        return count;
-    //    }
-    //}
     public class Solution1624
     {
         public int MaxLengthBetweenEqualCharacters(string s)
         {
-            Dictionary<char, int> dict = new Dictionary<char, int>();
-            int length = -1;
-            for (int i = 0; i < s.Length; i++)
+            if (s.Length == 1)
+                return 0;
+
+            Dictionary<char, int> map = new Dictionary<char, int>();
+
+            int count = 0;
+            for (int position = 0; position < s.Length; ++position)
             {
-                if (dict.ContainsKey(s[i]))
+                if (map.ContainsKey(s[position]))
                 {
-                    length = Math.Max(i - dict[s[i]] - 1, length);
+                    if (position - map[s[position]] > count)
+                        count = position - map[s[position]] - 1;
                 }
                 else
-                {
-                    dict[s[i]] = i;
-                }
+                    map.Add(s[position], position);
             }
 
-            return length;
+            return count;
         }
     }
 }
