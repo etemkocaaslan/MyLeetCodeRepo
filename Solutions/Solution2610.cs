@@ -1,6 +1,6 @@
 ﻿namespace leetcode.Solutions
 {
-    public class Solution
+    public class Solution2610
     {
         public IList<IList<int>> FindMatrix(int[] nums)
         {
