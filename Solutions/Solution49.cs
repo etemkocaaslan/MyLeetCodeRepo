@@ -1,6 +1,6 @@
 ﻿namespace leetcode.Solutions
 {
-    public class Solution
+    public class Solution49
     {
         public IList<IList<string>> GroupAnagrams(string[] strs)
         {
