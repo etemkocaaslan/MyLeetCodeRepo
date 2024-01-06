@@ -16,7 +16,7 @@
                     keyValuePairs.Add(num, 0);
                 }
             }
-            List<int> result = new List<int>();
+            var result = new List<int>();
             foreach(int key in keyValuePairs.Keys)
             {
                 if (keyValuePairs[key] >= k)
@@ -24,8 +24,7 @@
                     result.Add(key);
                 }
             }
-            int[] result1 = result.ToArray();
-            return result1;
+            return result.ToArray();
         }
     }
 }
